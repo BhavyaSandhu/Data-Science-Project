@@ -1,2 +1,2 @@
 # Data-Science-Project
-This is a read me file for my prject on diabetes prediction
+This is a read me file for my project on diabetes prediction
