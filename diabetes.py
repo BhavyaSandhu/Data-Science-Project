@@ -17,7 +17,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from google.colab import drive
 drive.mount('/content/drive')
 
-# Load the csv
+# Load the dataset
 csv_loc = "/content/drive/MyDrive/diabetes.csv"  # Update file path
 df = pd.read_csv(csv_loc)
 
