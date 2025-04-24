@@ -110,3 +110,28 @@ dnn_model.fit(X_train, y_train, epochs=50, batch_size=16, validation_data=(X_tes
 dnn_loss, dnn_accuracy = dnn_model.evaluate(X_test, y_test)
 print(f"Deep Neural Network Model Accuracy: {dnn_accuracy:.2f}")
 
+# Get input from the user
+user_input = {
+    'Pregnancies': float(input('Enter number of pregnancies: ')),
+    'Glucose': float(input('Enter Glucose level: ')),
+    'BloodPressure': float(input('Enter Blood Pressure: ')),
+    'SkinThickness': float(input('Enter Skin Thickness: ')),
+    'Insulin': float(input('Enter Insulin level: ')),
+    'BMI': float(input('Enter BMI: ')),
+    'DiabetesPedigreeFunction': float(input('Enter Diabetes Pedigree Function: ')),
+    'Age': float(input('Enter Age: '))
+}
+
+# Convert the user input into a DataFrame
+user_df = pd.DataFrame([user_input])
+
+# Make a prediction using the trained model
+user_prediction = rf.predict(user_df)
+
+# Interpret the prediction
+if user_prediction[0] == 0:
+    result = "No diabetes"
+else:
+    result = "Diabetes"
+
+print(f"The model predicts: {result}")
